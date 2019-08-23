@@ -1,6 +1,8 @@
 # Directory Filter
 Simple automation script that can be used to filter an existing directory or generate an active listener to a directory to filter incoming files to their respective folders.
 
+This script can be used as a utility to simplify the process of organizing files. For example, associating this script with the Downloads folder can assist in sorting the various file-types that exist within the directory.
+
 # Getting Started
 This script requires the `watchdog` module to be installed to generate the `FileSystemEventHandler`. This can be installed using `pip`
 
