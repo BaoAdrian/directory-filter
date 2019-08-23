@@ -1,0 +1,42 @@
+{
+    "src" : {
+        "location" : "/Users/USER/Downloads",
+        "subfolders" : [
+            "text-files", 
+            "pdf-files", 
+            "images", 
+            "videos", 
+            "zipped", 
+            "word-documents", 
+            "excel-documents"
+        ]
+    },
+    "text-files" : {
+        "location" : "/Users/USER/Downloads/text-files",
+        "extensions" : ["txt"]   
+    },
+    "pdf-files" : {
+        "location" : "/Users/USER/Downloads/pdf-files",
+        "extensions" : ["pdf"]
+    },
+    "images" : {
+        "location" : "/Users/USER/Downloads/images",
+        "extensions" : ["jpg", "jpeg", "heic", "png", "svg"]
+    },
+    "videos" : {
+        "location" : "/Users/USER/Downloads/videos",
+        "extensions" : ["mp4", "mov"]
+    },
+    "zipped" : {
+        "location" : "/Users/USER/Downloads/zipped",
+        "extensions" : ["zip"]
+    },
+    "word-documents" : {
+        "location" : "/Users/USER/Downloads/word-documents",
+        "extensions" : ["doc", "docx"]
+    },
+    "excel-documents" : {
+        "location" : "/Users/USER/Downloads/excel-documents",
+        "extensions" : ["xlsx"]
+    }
+}
