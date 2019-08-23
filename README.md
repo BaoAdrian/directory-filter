@@ -15,7 +15,7 @@ This script utilizes a `.json` configuration file that can be used to define the
 The sample `filter-config.json` is an example of the expected format of the configuration file. Aggregating subfolders is as easy as adding another entry and appending that folder name to the list of `subfolders` listed under `src`
 
 Example:
-```json
+```
 {
     "src" : {
         "location" : "/Users/USER/Downloads",
@@ -39,9 +39,11 @@ Example:
 ```
 
 ## Arguments
-There are two usages of this script, either `clean` or `filter` a directory.
+There are two usages of this script, either `--clean` or `--filter` a directory.
 
 | Argument | Description |
 | :--- | :--- |
 | `clean` | Performs a single walk-through of the provided `src` directory from the `*.json` file and filters according to the provided configuration |
 | `filter` | Creates a `FileSystemEventHandler` that detects incoming files to the `src` directory and actively filters them as they come in |
+
+Additionally, you may wish to provide your own `json` configuration file and may use the `--jsonConfig` argument to provide the filepath for that file.
