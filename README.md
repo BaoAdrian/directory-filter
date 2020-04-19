@@ -21,11 +21,11 @@ You can run this script two ways.
 2. `--filter` runs as a _Listener_ script to _actively filter_ a defined location
 
 ### Single-Run Clean
-The `--clean` argument triggers a single-run execution using the provided `*.json` configuration
+The `--clean` argument triggers a single-run execution using the provided `*.json` configuration   
 ![Single-Run Clean](https://media.giphy.com/media/YkyjA0LIqItYWVVR4M/giphy.gif)
 
 ### Active Listener
-The `--filter` argument starts a _FileSystemEventHandler_ to listen for changes occurring in your defined source location & filters incoming files accordingly
+The `--filter` argument starts a _FileSystemEventHandler_ to listen for changes occurring in your defined source location & filters incoming files accordingly   
 ![Active-Listener](https://media.giphy.com/media/KztlirS8Itk18BA4kH/giphy.gif)
 
 Additionally, you may wish to provide your own `json` configuration file and may use the `--jsonConfig` argument to provide the filepath for that file.
