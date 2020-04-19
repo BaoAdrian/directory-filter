@@ -4,48 +4,31 @@ Simple automation script that can be used to filter an existing directory or gen
 This script can be used as a utility to simplify the process of organizing files. For example, associating this script with the Downloads folder can assist in sorting the various file-types that exist within the directory.
 
 # Getting Started
-This script requires the `watchdog` module to be installed to generate the `FileSystemEventHandler`. This can be installed using `pip`
-
+This script requires `watchdog` module to be installed to generate the `FileSystemEventHandler`.
 ```bash
-python pip install watchdog
+$ python pip install watchdog
 ```
 
 # Usage
 ## Configuration
-This script utilizes a `.json` configuration file that can be used to define the source directory and any filtering configurations of your choosing. You will need to modify this file according to your environment/filtering behavior before running the script.
+You must configure your source/destination settings for the script to interpret when you run it. See the provided `filter-config.json` file for an example that filters the source directory of `~/Downloads` into its defined subdirectories.
 
-The sample `filter-config.json` is an example of the expected format of the configuration file. Aggregating subfolders is as easy as adding another entry and appending that folder name to the list of `subfolders` listed under `src`
+You may choose to add/subtract subfolders and/or file extensions you wish to extract and filter. Modify the `filter-config.json` file for your specific usecase.
 
-Example:
-```
-{
-    "src" : {
-        "location" : "/Users/USER/Downloads",
-        "subfolders" : [
-            "text-files", 
-            "pdf-files", 
-            "images", 
-            "videos", 
-            "zipped", 
-            "word-documents", 
-            "excel-documents",
-            "new-filtered-folder"
-        ]
-    },
-    ... existing folders ...
-    "new-filtered-folder" : {
-        ... location ...
-        ... extensions ...
-    }
-}
-```
+## Modes
+You can run this script two ways. 
+1. `--clean` runs as a _Single-Run_ script to _clean_ a defined location
+2. `--filter` runs as a _Listener_ script to _actively filter_ a defined location
 
-## Arguments
-There are two usages of this script, either `--clean` or `--filter` a directory.
+### Single-Run Clean
+The `--clean` argument triggers a single-run execution using the provided `*.json` configuration
+![Single-Run Clean](https://media.giphy.com/media/YkyjA0LIqItYWVVR4M/giphy.gif)
 
-| Argument | Description |
-| :--- | :--- |
-| `clean` | Performs a single walk-through of the provided `src` directory from the `*.json` file and filters according to the provided configuration |
-| `filter` | Creates a `FileSystemEventHandler` that detects incoming files to the `src` directory and actively filters them as they come in |
+### Active Listener
+The `--filter` argument starts a _FileSystemEventHandler_ to listen for changes occurring in your defined source location & filters incoming files accordingly
+![Active-Listener](https://media.giphy.com/media/KztlirS8Itk18BA4kH/giphy.gif)
 
 Additionally, you may wish to provide your own `json` configuration file and may use the `--jsonConfig` argument to provide the filepath for that file.
+```
+$ python filter.py --clean --jsonConfig="/path/to/your/config.json"
+```
